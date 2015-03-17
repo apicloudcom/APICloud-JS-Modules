@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>APICloud</h1>
+        </div>
+        <div id="main">
+                
+        </div>
+        <div id="footer">
+            <h5>Copyright &copy;2014 </h5>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+    apiready = function(){
+    	var intro_dot_w = api.winWidth;
+        var intro_dot_h = api.winHeight;
+        intro_dot_w = parseInt(intro_dot_w/3);
+        intro_dot_h = parseInt(intro_dot_h*4/5);
+        
+		api.openFrameGroup({
+            name: 'intro_pages',
+            background: '#000000',
+            scrollEnabled: true,
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            index: 0,
+            frames:[
+                {
+                    name: 'intro_1', 
+                    url: './html/intro_pages/intro_pages_1.html', 
+                    pageParam:{}, 
+                    bounces:false, 
+                    opaque:true,
+                    bgColor: '#484069'
+                },{
+                    name: 'intro_2', 
+                    url: './html/intro_pages/intro_pages_2.html', 
+                    pageParam:{}, 
+                    bounces:false, 
+                    opaque:true,
+                    bgColor: '#DE96AC'
+                },{
+                    name: 'intro_3', 
+                    url: './html/intro_pages/intro_pages_3.html', 
+                    pageParam:{}, 
+                    bounces:false, 
+                    opaque:true,
+                    bgColor: '#187E00'
+                },{
+                    name: 'intro_4', 
+                    url: './html/intro_pages/intro_pages_4.html', 
+                    pageParam:{}, 
+                    bounces:false, 
+                    opaque:true,
+                    bgColor: '#31A7CF'
+                }
+            ]
+        }, function(ret, err){
+            var name = ret.name;
+            var index = ret.index;
+            if(index === 0){
+            	setTimeout(function(){
+	            	api.openFrame({
+			           name: 'dot_slider',
+			           url: './html/intro_pages/dot_slider.html',
+			           bounces: false,
+			           pageParam: {
+			               w: intro_dot_w
+			           },
+			           rect: {
+			               x: intro_dot_w,
+			               y: intro_dot_h,
+			               w: intro_dot_w,
+			               h: 10
+			           }
+			       	});
+            	},50);
+            	
+            }
+            
+		   api.execScript({
+		   	   name: 'root',
+		   	   frameName: 'dot_slider',
+		   	   script: 'try{changeDot('+index+');}catch(e){}'
+		   });
+        });
+    };
+</script>
+</html>

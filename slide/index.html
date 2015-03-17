@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <style>
+    /*html, body {height: 100%;}*/
+    .card {padding:20px;background-color: #fcc;height: 70px;line-height: 70px;text-align: center;margin-top: 20px;font-size: 22px;}
+    </style>
+</head>
+<body>
+    <div class="card card1" tapmode="" onclick="openNewWindow1()">演示1</div>
+    <div class="card card2" tapmode="" onclick="openNewWindow2()">演示2</div>
+</body>
+<script type="text/javascript" src="./script/api.js"></script>
+<script type="text/javascript">
+
+function openNewWindow1 (_index) {
+    api.openWin({
+        name: 'win_swipe_pic',
+        url: './html/win_swipe_pic.html',
+        delay:150,
+        bounces: false
+    });
+}
+
+function openNewWindow2 () {
+    api.openWin({
+        name: 'win_swipe_dianping',
+        url: './html/win_swipe_dianping.html',
+        delay:150,
+        bounces: false
+    });
+}
+    apiready = function(){
+		
+    };
+</script>
+</html>

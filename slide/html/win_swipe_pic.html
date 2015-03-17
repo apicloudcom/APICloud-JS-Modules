@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
+    <title>APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<style>
+        /* 三列标题居中可覆盖样式 */
+        .threecol-center-header {height: 50px;background-color: #4285F4;}
+        .threecol-center-header .center {line-height: 50px;font-weight: bold;font-size: 20px;color: #fff;}
+        .threecol-center-header .left img {background-image: url(../image/back.png);width: 30px; height: 30px; background-size: cover;margin: 10px 0 10px 0;vertical-align: top;}
+        .threecol-center-header .left span {line-height: 50px; color: #fff; font-size: 20px;}
+
+		.swipe {
+            overflow: hidden;
+            visibility: hidden;
+            position: relative;
+            background: #fff;
+            padding-bottom: 10px;
+        }
+        .swipe-wrap {
+            overflow: hidden;
+            position: relative;
+        }
+        .swipe-wrap .swipe-box {
+            float: left;
+            width: 100%;
+            position: relative;
+        }
+        .swipe-wrap .swipe-box img {width: 100%;}
+	</style>
+</head>
+<body>
+    <div class="threecol-center-header" id="topbar">
+        <div class="left" tapmode="" onclick="closewin()">
+            <div class="logo"><img src="../image/1pxholder.png" alt="" class=""><span>返回</span></div>
+        </div>
+    </div>
+
+    <div id='slider' class='swipe'>
+        <div class='swipe-wrap'>
+            <div class="swipe-box">
+                <img src="../image/firstcover01.png" alt="">
+            </div>
+            <div class="swipe-box">
+                <img src="../image/firstcover02.png" alt="">
+            </div>
+            <div class="swipe-box">
+                <img src="../image/firstcover03.png" alt="">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/swipe.js"></script>
+<script type="text/javascript">
+    function closewin () {
+        api.closeWin({name: 'win_swipe_pic'});
+    }
+
+    var slider =  Swipe(document.getElementById('slider'), {
+        auto: 3000,
+        continuous: true,
+        callback: function(pos) {
+        }
+    });
+</script>
+</html>

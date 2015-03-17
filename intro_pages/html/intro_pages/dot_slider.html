@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0"/>
+    <title>APP</title>
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <style>
+    	html,body{
+    		background: transparent;
+            width: 100%;
+            height: 8px;
+    	}
+    	ul,li,ol{
+    		list-style: none;
+    		background-color: transparent;
+    	}
+    	#wrap{
+    		background: transparent;
+            width: 100%;
+    	}
+    	#wrap ul{
+    		display: block;
+            width: 100%;
+    	}
+    	#wrap li{
+    		float: left;
+    		width: 25%;
+    		height: 8px; 
+    		background:	url(../../res/slider_dot.png) transparent center center no-repeat;
+    		background-size: 8px 8px;
+    	}
+    	#wrap li.active{
+    		background:	url(../../res/slider_dot_current.png) transparent center center no-repeat;
+    		background-size: 8px 8px;
+    	}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <ul>
+        	<li class="active" onclick="changeIntro(0);" tapmode> </li>
+        	<li class="" onclick="changeIntro(1);" tapmode> </li>
+        	<li class="" onclick="changeIntro(2);" tapmode> </li>
+        	<li class="" onclick="changeIntro(3);" tapmode> </li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script>
+	var aLi = $api.domAll('li');
+    function changeDot(num){
+    	api.bringFrameToFront({
+	        from: 'dot_slider'
+        });
+    	for(i = 0,len = aLi.length; i<len; i++){
+    		$api.removeCls(aLi[i],'active');
+    	}
+    	$api.addCls(aLi[num],'active');
+    };
+    function changeIntro(num){
+    	api.setFrameGroupIndex ({
+		    name: 'intro_pages',
+		    index: num,
+		    scroll: true
+		});
+    };
+    
+	apiready = function(){
+        var w = api.pageParam.w;
+        $api.css(document.body,{'width': w+'px'});   
+	};
+</script>
+</html>

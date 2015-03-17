@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
+    <title>APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<style>
+
+        /* 三列标题居中可覆盖样式 */
+        .threecol-center-header {height: 50px;background-color: #4285F4;}
+        .threecol-center-header .center {line-height: 50px;font-weight: bold;font-size: 20px;color: #fff;}
+        .threecol-center-header .left img {background-image: url(../image/back.png);width: 30px; height: 30px; background-size: cover;margin: 10px 0 10px 0;vertical-align: top;}
+        .threecol-center-header .left span {line-height: 50px; color: #fff; font-size: 20px;}
+        
+
+		.swipe {
+            overflow: hidden;
+            visibility: hidden;
+            position: relative;
+            background: #fff;
+            padding-bottom: 10px;
+        }
+        .swipe-wrap {
+            overflow: hidden;
+            position: relative;
+        }
+        .swipe-wrap .swipe-box {
+            float: left;
+            width: 100%;
+            position: relative;
+        }
+
+        .sliderow {text-align: center;width: 100%;display: block;}
+        /*.slidepanel .sliderow {margin-top: 10px;}*/
+        .sliderow .slidecol {float:left;width: 25%;}
+        .sliderow .slidecol img {width: 60%;margin-top: 10px;}
+        .sliderow .slidecol div {font-size: 13px; margin-top: 5px;}
+	</style>
+</head>
+<body>
+
+    <div class="threecol-center-header" id="topbar">
+        <div class="left" tapmode="headerhover" onclick="closewin()">
+            <div class="logo"><img src="../image/1pxholder.png" alt="" class=""><span>返回</span></div>
+        </div>
+    </div>
+
+
+    <div id='slider' class='swipe'>
+        <div class='swipe-wrap'>
+            <div class="swipe-box">
+                <div class="sliderow">
+                            <div class="slidecol" tapmode="" onclick="openNewWindow('food')">
+                                <img src="../image/food_u.png" alt="">
+                                <div class="">
+                                    美食
+                                </div>
+                            </div><div  class="slidecol" tapmode="" onclick="openNewWindow('food')">
+                                <img src="../image/snack_u.png" alt="">
+                                <div class="">
+                                    小吃快餐
+                                </div>
+                            </div><div  class="slidecol" tapmode="" onclick="openNewWindow('food')">
+                                <img src="../image/bar_o.png" alt="">
+                                <div class="">
+                                    休闲娱乐
+                                </div>
+                            </div><div  class="slidecol" tapmode="" onclick="openNewWindow('totalclassify')">
+                                <img src="../image/more_u.png" alt="">
+                                <div class="">
+                                    全部分类
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sliderow">
+                            <div  class="slidecol" tapmode="" onclick="openNewWindow('tuan')">
+                                <img src="../image/groupon_u.png" alt="">
+                                <div class="">
+                                团购
+                                </div>
+                            </div><div  class="slidecol" tapmode="" onclick="openNewWindow('orderhotel')">
+                                <img src="../image/hotel_u.png" alt="">
+                                <div class="">
+                                订酒店
+                                </div>
+                            </div><div   class="slidecol" tapmode="" onclick="openNewWindow('waimai')">
+                                <img src="../image/takeaway_u.png" alt="">
+                                <div class="">
+                                订外卖
+                                </div>
+                            </div><div   class="slidecol" tapmode="" onclick="openNewWindow('movies')">
+                                <img src="../image/film_u.png" alt="">
+                                <div class="">
+                                看电影
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <div class="swipe-box">
+                <div class="sliderow">
+                        <div  class="slidecol" tapmode="" onclick="openNewWindow('girls')">
+                        <img src="../image/liren.png" alt="">
+                        <div class="">
+                        丽人
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openNewWindow('kids')">
+                        <img src="../image/qinzi.png" alt="">
+                        <div class="">
+                        亲子
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openNewWindow('marriage')">
+                        <img src="../image/jiehun.png" alt="">
+                        <div class="">
+                        结婚
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openNewWindow('decorate')">
+                        <img src="../image/jiazhuang.png" alt="">
+                        <div class="">
+                        家装
+                        </div>
+                        </div>
+                    </div>
+                    <div class="sliderow">
+                        <div  class="slidecol" tapmode="" onclick="openNewWindow('reserve')">
+                        <img src="../image/dingzuo.png" alt="">
+                        <div class="">
+                        订座
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openAllinone(1)">
+                        <img src="../image/zhaoyouhui.png" alt="">
+                        <div class="">
+                        找优惠
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openNewWindow('seekrank')">
+                        <img src="../image/bangdan.png" alt="">
+                        <div class="">
+                        看榜单
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openLogin()">
+                        <img src="../image/dianping.png" alt="">
+                        <div class="">
+                        写点评
+                        </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="swipe-box">
+                <div class="sliderow">
+                        <div  class="slidecol" tapmode="" onclick="openAllinone(1)">
+                        <img src="../image/zuliao.png" alt="">
+                        <div class="">
+                        足疗按摩
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openAllinone(2)">
+                        <img src="../image/jingdian.png" alt="">
+                        <div class="">
+                        景点郊游
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openAllinone(3)">
+                        <img src="../image/ktv_u.png" alt="">
+                        <div class="">
+                        KTV
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openAllinone(4)">
+                        <img src="../image/mianbao.png" alt="">
+                        <div class="">
+                        面包甜点
+                        </div>
+                        </div>
+                    </div>
+                    <div class="sliderow">
+                        <div  class="slidecol" tapmode="" onclick="openAllinone(5)">
+                        <img src="../image/around.png" alt="">
+                        <div class="">
+                        查周边
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openAllinone(6)">
+                        <img src="../image/vip.png" alt="">
+                        <div class="">
+                        会员卡
+                        </div>
+                        </div><div  class="slidecol" tapmode="" onclick="openAllinone(7)">
+                        <img src="../image/screenshot.png" alt="">
+                        <div class="">
+                        拍婚照
+                        </div>
+                        </div><div  class="slidecol">
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../script/api.js"></script>
+<script type="text/javascript" src="../script/swipe.js"></script>
+<script type="text/javascript">
+    function closewin () {
+        api.closeWin({name: 'win_swipe_dianping'});
+    }
+
+    var slider = Swipe(document.getElementById('slider'), {
+            // auto: 3000,
+            continuous: true,
+            callback: function(pos) {
+            }
+        });
+</script>
+</html>
