@@ -1,0 +1,18 @@
+ <widget id="A6971781637053"  version="0.0.1">
+    <name>appGuide</name>
+    <description>
+        appGuide module For APICloud.
+    </description>
+    <author email="developer@apicloud.com" href="http://www.apicloud.com">
+        Developer
+    </author>
+    <content src="appwelcome.html" />
+    <access origin="*" />
+    <preference name="pageBounce" value="false"/>
+	<preference name="appBackground" value="rgba(0,0,0,0.0)"/>
+	<preference name="windowBackground" value="rgba(0,0,0,0.0)"/>
+	<preference name="frameBackgroundColor" value="rgba(0,0,0,0.0)"/>
+	<preference name="debug" value="false"/>
+	<permission name="location" />
+</widget>
+
