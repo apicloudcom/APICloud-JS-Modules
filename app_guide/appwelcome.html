@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="api.css"/>
+    <link rel="stylesheet" type="text/css" href="common.css"/>
+    <style>
+        /*slide*/
+        .swipe {
+            height: 100%;
+            overflow: hidden;
+            /*visibility: hidden;*/
+            position: relative;
+        }
+
+        .swipe-wrap {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .swipe-wrap > div {
+            float: left;
+            width: 100%;
+            position: relative;
+        }
+
+        .swipe-wrap > div {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .swipe-wrap img {
+            width: 100%;
+            height: 100%;
+            min-width: 320px;
+        }
+
+        #slide {
+            margin: 0 auto;
+            position: relative;
+        }
+        #pointer {
+            position: absolute;
+            bottom: 12px;
+            overflow: hidden;
+            width: 100%;
+            text-align: center;
+        }
+
+        #pointer div {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            margin-right: 4px;
+            background-color: #FFFFFF;
+        }
+
+        #pointer div.active {
+            background-color: #999999;
+        }
+    </style>
+</head>
+<body>
+<div id='slide' class='swipe'>
+    <div class='swipe-wrap' id="banner-content">
+        <div >
+            <img src="1.jpg"/>
+        </div>
+        <div >
+            <img src="2.jpg"/>
+        </div>
+        <div >
+            <img src="3.jpg"/>
+        </div>
+        <div >
+            <img src="4.jpg"/>
+        </div>
+    </div>
+    <div id="pointer">
+        <div class="active"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<script src="api.js"></script>
+<script src="swipe.js"></script>
+<script>
+    apiready = function () {
+
+    }
+    function initSlide() {
+        var slide = $api.byId('slide');
+        var pointer = $api.domAll('#pointer div');
+        window.mySlide = Swipe(slide, {
+            auto: 0,
+            continuous: false,
+            disableScroll: true,
+            stopPropagation: true,
+            callback: function (index, element) {
+                var actPoint = $api.dom('#pointer div.active');
+                $api.removeCls(actPoint, 'active');
+                $api.addCls(pointer[index], 'active');
+            },
+            transitionEnd: function (index, element) {
+
+            }
+        });
+    }
+    initSlide();
+</script>
+</body>
+</html>
