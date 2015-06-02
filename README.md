@@ -4,3 +4,4 @@
 * frameGroup 实现的引导页 /intro_pages/
 * 图片轮播效果 /slide/
 * Swipe.js 实现的引导页 /app_guide/
+* 兼容APICloud平台的[Swipe.js](https://github.com/jinlong/Swipe)
