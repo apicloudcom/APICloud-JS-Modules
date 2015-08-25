@@ -37,7 +37,7 @@
     <td>http://toddmotto.com/echo-js-simple-javascript-image-lazy-loading/</td>
 </tr>
 <tr>
-    <td>hammer</td>
+    <td>/hammer/</td>
     <td>适合移动端的手势库</td>
     <td>http://hammerjs.github.io/getting-started/</td>
 </tr>
