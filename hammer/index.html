@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="./css/style.css" >
+    <style>
+      body{ background-color: white; }
+      .slidebar ul{ width:90%; box-shadow:  10px 0 20px rgba(0,0,0,.3); position:relative;  }
+      .slidebar li{ padding: 14px;background-color:white;  }
+      .slidebar{  left:-100%; top:0; width: 100%; right:0; bottom:0;  position: fixed; z-index: 2;  overflow: auto; }
+      .slidebar.trans{ transition: all .3s; -webkit-transition: all .3s; }
+      .event-slidebar{ background-color:rgba(0,0,0,0); position:absolute; width:50%; top:0; right:0; bottom:0; z-index:2;}
+	  
+	  
+      .event-slide{ position: fixed; left: 0; top: 0; bottom: 0; width: 20px; background-color: rgba(0,0,0,0); }
+      
+	  .main ul{ width:100%; overflow:hidden; }
+	  .main ul li{ -webkit-transition:all .3s; transition:all .3s; }
+	  .main ul li.active{ -webkit-transform: translateX(-33.3333333333%); transform: translateX(-33.3333333333%); }
+	  
+      .press,
+      .doubletap{ background-color: #a92; padding: 20px; text-align: center;  }
+      .doubletap{ background-color: #961; }
+      .press.active{ background-color: white;  }
+      .doubletap.active{ background-color: #f73; }
+	  .delete{ background-color:red; color:white; padding: 20px; text-align: center; }
+    </style>
+  </head>
+  <body> 
+      <div class="slidebar">
+		<div class="event-slidebar"></div>
+        <ul>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+          <li class="border-b">侧滑</li>
+        </ul>
+      </div>
+      <div class="main">
+        <ul>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+          <li class="flex-wrap">
+            <div class="flex-con press">长按</div>
+            <div class="flex-con doubletap">双击</div>
+            <div class="flex-con delete">删除</div>
+          </li>
+        </ul>
+      </div>
+      <div class="event-slide"></div>
+  </body>
+</html>
+<script src="./js/api.js"></script>
+<script src="./js/hammer.min.js"></script>
+<script type="text/javascript">
+         
+         var slidebar = new Hammer( $api.dom('.event-slidebar') );
+         slidebar.on('pan', function (ev) {
+              var slidebarL = $api.dom('.slidebar').offsetLeft;
+			  if( ev.deltaX < 0 ){
+                $api.dom('.slidebar').style.cssText = 'left:'+ ev.deltaX +'px;';
+			  }else{
+                $api.dom('.slidebar').style.cssText = 'left:0px;';
+			  }
+         });
+		 
+         slidebar.on('panend', function (ev) {
+           funSlideAnimate();
+         });
+         
+         
+         var evSlidebar = new Hammer( $api.dom('.event-slide') );
+         evSlidebar.on('pan', function (ev) {
+             if( ev.deltaX >= document.documentElement.clientWidth ){
+                var siliL = 0;
+             }else{
+                var siliL = ev.deltaX - document.documentElement.clientWidth;
+             }
+             $api.dom('.slidebar').style.cssText = 'left:'+ siliL +'px;';
+            
+         });
+         evSlidebar.on('panend', function (ev) {
+           funSlideAnimate();
+         });
+         
+         var press = $api.domAll('.press');
+         for( var x in press ){
+           if( press[x].nodeType ){
+             new Hammer( press[x] ).on('press', function (ev) {
+               if( $api.hasCls( ev.target, 'active' ) ){
+                 $api.removeCls( ev.target, 'active' );
+               }else{
+                 $api.addCls( ev.target, 'active' );
+               }
+             });
+           }
+         }
+		 
+         var doubletap = $api.domAll('.doubletap');
+         for( var x in doubletap ){
+           if( doubletap[x].nodeType ){
+             new Hammer( doubletap[x] ).on('doubletap', function (ev) {
+               if( $api.hasCls( ev.target, 'active' ) ){
+                 $api.removeCls( ev.target, 'active' );
+               }else{
+                 $api.addCls( ev.target, 'active' );
+               }
+             });
+           }
+         }
+         
+		 
+		 var eMainLi = $api.domAll('.main li');
+		 for( var x in eMainLi ){
+			if( eMainLi[x].nodeType ){
+				eMainLi[x].style.width = document.documentElement.clientWidth / 2 *3 +'px';
+				 new Hammer( eMainLi[x] ).on('swipe', function (ev) {
+					console.log( ev )
+				   if( $api.hasCls( ev.target.parentNode, 'active' ) ){
+					 $api.removeCls( ev.target.parentNode, 'active' );
+				   }else{
+					 $api.addCls( ev.target.parentNode, 'active' );
+				   }
+				 });
+			}
+		 }
+         function funSlideAnimate(){
+              var slidebarL = $api.dom('.slidebar').offsetLeft,
+                  time = null;
+              clearTimeout( time )
+              $api.addCls( $api.dom('.slidebar'),'trans' );
+              if( document.documentElement.clientWidth / 2 <= Math.abs( slidebarL ) ){
+                $api.dom('.slidebar').style.cssText = 'left:-'+document.documentElement.clientWidth+'px;';
+              }else{
+                $api.dom('.slidebar').style.cssText = 'left:0;';
+              }
+              time = setTimeout(function(){
+                $api.removeCls( $api.dom('.slidebar'),'trans' );
+              },300);
+         }
+         
+</script>

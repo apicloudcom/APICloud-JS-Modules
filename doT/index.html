@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title></title>
+	<style>
+		*{ margin:0; padding:0; }
+		body{ background-color:#ccc; }
+		div{ padding:  20px; }
+	</style>
+  </head>
+  <body>
+	<!--  赋值 -->
+	<script id="interpolationTemp" type="text/x-dot-template" >
+		<h1> hello {{=it.name}} </h1>
+	</script>
+	<div id="interpolation"></div><hr />
+	
+	
+	<!--  循环 -->
+	<script id="evaluationTemp" type="text/x-dot-template">
+		{{ for(var x in it) { }}
+			<p>{{= x }} - > {{= it[x] }}</p>
+		{{ } }}
+	</script>
+	<div id="evaluation"></div><hr />
+	
+	
+	
+	<!--  迭代 -->
+	<script id="interationTemp" type="text/x-dot-template">
+		{{~it.array:value:index}}
+			<p>{{= index+1 }}{{= value }}</p>
+		{{~}}
+	</script>
+	<div id="interation"></div><hr />
+	
+	
+	<!--  条件语句 -->
+	<script id="conditionalsTemp" type="text/x-dot-template">
+		{{? it.lastName }}
+			<p>{{= it.lastName }}</p>
+		{{?}}
+		
+		{{? it.name }}
+			<p>{{= it.name }}</p>
+		{{?? it.firstName }}
+			<p>{{= it.firstName }}</p>
+		{{?}}
+	
+		{{? it.lastName }}
+			<p> {{= it.lastName }}</p>
+		{{?? it.age === 22}}
+			<p> {{= it.lastName }}</p>
+		{{?? it.firstName }}
+			<p> {{= it.firstName }}</p>
+		{{??}}
+			<p>no data！</p>
+		{{?}}
+	</script>
+	<div id="conditionals"></div><hr />
+	
+	
+	
+  </body>
+	<script src="./js/api.js"></script>
+	<script src="./js/doT.min.js"></script>
+	<script type="text/javascript">
+		//	赋值	
+		var interpolationData = { 'name' : 'word' };	
+		var interpolation = doT.template( $api.dom('#interpolationTemp').innerHTML );
+		$api.dom( '#interpolation' ).innerHTML = interpolation( interpolationData );
+		
+		//	循环	
+		var evaluationData = {'firstName' : 'bi', 'lastName' : 'mingxing', 'age' : 22 };	
+		var evaluation = doT.template( $api.dom('#evaluationTemp').innerHTML );
+		$api.dom( '#evaluation' ).innerHTML = evaluation( evaluationData );
+		
+		//	迭代 	
+		var interationData =  {"array":["banana","apple","orange"]};	
+		var interation = doT.template( $api.dom('#interationTemp').innerHTML );
+		$api.dom( '#interation' ).innerHTML = interation( interationData );
+		
+		//	条件语句
+		var conditionals = doT.template( $api.dom('#conditionalsTemp').innerHTML );
+		$api.dom( '#conditionals' ).innerHTML = conditionals( evaluationData );
+	</script>
+
+</html>
