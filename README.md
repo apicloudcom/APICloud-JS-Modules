@@ -24,7 +24,7 @@
 <tr>
     <td>/async/</td>
     <td>异步接口如何同步调用</td>
-    <td>[async.js](https://github.com/caolan/async)</td>
+    <td>(async.js)[https://github.com/caolan/async]</td>
 </tr>
 <tr>
     <td>/doT/</td>
