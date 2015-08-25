@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title> 异步接口如何同步调用</title>
+	<style>
+		*{ margin:0; padding:0; }
+	</style>
+  </head>
+  <body>
+	  
+  </body>
+</html>
+<script src="./js/async.js"></script>
+<script>
+	/*
+		升序输出数字（ 函数内部只能增加内容不能修改/删除内容 ）
+			setTimeout(function(){
+				console.log( 1 )
+			},2000);
+			setTimeout(function(){
+				console.log( 2 )
+			},1000);
+			setTimeout(function(){
+				console.log( 3 )
+			},500);
+	*/
+	
+	//异步接口如何同步调用？ ( 方法1 )
+	number1( number2 );
+	function number1( callback ){
+		setTimeout(function(){
+			console.log( 1 )
+			callback( number3 );
+		},2000);
+	}
+	function number2( callback ){
+		setTimeout(function(){
+			console.log( 2 )
+			callback();
+		},1000);
+	}
+	function number3( ){
+		setTimeout(function(){
+			console.log( 3 )
+		},500);
+	}
+	
+	
+	//异步接口如何同步调用？ ( 方法2:Async.js  )
+	async.auto({
+	    number1: function(callback){
+			setTimeout(function(){
+				console.log( 11 )
+	       		 callback(null, { 'name' :'numer1' });
+			},2000);
+	    },
+	    number2: ['number1', function(callback, results){
+			setTimeout(function(){
+				console.log( 12 )
+	       		 callback(null, {'name':'number2'});
+			},1000);
+	    }],
+	    number3: ['number2', function(callback, results){
+			setTimeout(function(){
+				console.log( 13 )
+	       		 callback(null, {'name':'number3'});
+			},500);
+	    }]
+	}, function(err, results) {
+	    console.log( results );
+	});
+</script>

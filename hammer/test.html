@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DEMO</title>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+		*{ margin:0; padding:0; list-style:none; }
+		body,html{ height: 100%; line-height: 32px; }
+	</style>
+  </head>
+  <body> 
+    
+  </body>
+</html>
+<script src="./js/api.js"></script>
+<script src="./js/hammer.min.js"></script>
+<script type="text/javascript">
+         var hammertime = new Hammer( $api.dom('body') );
+         hammertime.on('swipe pan panstart panmove panend pancancel multipan press pressup pinch rotate tap doubletap', function (ev) {
+             $api.dom('body').innerHTML = '点击事件：'+ev.type+'<br /> X轴偏移：'+ev.deltaX+'<br />Y轴偏移：'+ ev.deltaY;
+         });
+</script>
