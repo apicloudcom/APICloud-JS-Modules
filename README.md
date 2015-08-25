@@ -1,6 +1,6 @@
 # apicloud-js-module
 
-基于APICloud平台开发的一些常用JS组件，每个文件夹包含一个单独示例，可以在AppLoader中单独运行。
+基于[APICloud平台](http://www.apicloud.com/)开发的一些常用JS组件，每个文件夹包含一个单独示例，可以在[AppLoader](http://docs.apicloud.com/APICloud/download)中单独运行。
 
 <table>
 <tr>
@@ -24,7 +24,7 @@
 <tr>
     <td>/async/</td>
     <td>异步接口如何同步调用</td>
-    <td>(async.js)[https://github.com/caolan/async]</td>
+    <td><a href="https://github.com/caolan/async" target="_blank">async.js</a></td>
 </tr>
 <tr>
     <td>/doT/</td>
