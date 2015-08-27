@@ -1,6 +1,6 @@
 # apicloud-js-module
 
-基于[APICloud平台](http://www.apicloud.com/)开发的一些常用JS组件，每个文件夹包含一个单独示例，可以在[AppLoader](http://docs.apicloud.com/APICloud/download)中单独运行。
+基于[APICloud平台](http://www.apicloud.com/)开发的一些常用JS组件（包含移动端适用的开源JS组件），每个文件夹包含一个单独示例，可以在[AppLoader](http://docs.apicloud.com/APICloud/download)中单独运行。
 
 <table>
 <tr>
@@ -40,5 +40,10 @@
     <td>/hammer/</td>
     <td>适合移动端的手势库</td>
     <td>http://hammerjs.github.io/getting-started/</td>
+</tr>
+<tr>
+    <td>/scrollNav/</td>
+    <td>利用iScroll-lite 配合 api.frameGroup 实现顶部滚动导航</td>
+    <td>https://github.com/cubiq/iscroll</td>
 </tr>
 </table>
