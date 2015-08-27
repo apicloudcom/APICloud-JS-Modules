@@ -43,7 +43,7 @@
 </tr>
 <tr>
     <td>/scrollNav/</td>
-    <td>利用iScroll-lite 配合 apicloud引擎api实现顶部滚动导航</td>
-    <td>http://hammerjs.github.io/getting-started/</td>
+    <td>利用iScroll-lite 配合 api.frameGroup 实现顶部滚动导航</td>
+    <td>https://github.com/cubiq/iscroll</td>
 </tr>
 </table>
