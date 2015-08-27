@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="./css/style.css" >
+	<style>
+		*{ margin:0; padding:0; }
+		body{ background-color: #444; }
+    #wrapper{  background-color:#7a0;  }
+    #iscroll{ overflow: hidden; position: relative; }
+    .showdon{ width: 40px; height: 40px; box-shadow: 0 0 6px #000; position: absolute; right: -40px; top: 5px; border-radius: 50%;  }
+    .run-line{  height: 2px; width: 48px; position: absolute;  left: 0; bottom: 0;  background-color: white; -webkit-transition:all .3s; transition:all .3s; }
+    .con{  white-space: nowrap; line-height: 48px; position: absolute  }
+    li{ display: inline-block; padding: 0 10px; color: white; line-height: 48px;   }
+    .arrows{ width: 40px; height: 48px; }
+	</style>
+  </head>
+  <body>
+	  <div id="wrapper" class="flex-wrap" >
+      <div id="iscroll" class="flex-con" >
+        <div class="con">
+          <ul>
+              <li tapmode="hover" onclick="funActive( this );" >测试</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试导</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试导航</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试导</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试导航</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试导</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试导航</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试导</li>
+              <li tapmode="hover" onclick="funActive( this );" >测试导航</li>
+          </ul>
+          <div class="run-line"></div>
+        </div>
+        <div class="showdon"></div>
+      </div>
+      <div class="arrows"></div>
+  </div>
+  <div onclick="open();" >大幅度</div>
+  </body>
+</html>
+<script src="./script/iScroll-lite.js"></script>
+<script>
+	function open(){
+		
+	}
+  var frames = [],
+      myScroll;
+      apiready = function(){
+        loaded ();
+      }
+      
+    function loaded () {
+    	myScroll = new IScroll('#iscroll', {
+    		scrollX: true,
+        tap: true
+    	});
+      var eLis = document.querySelectorAll('li');
+      for( var i = 0, li = eLis.length; i < li; i++ ){
+    		frames.push( {
+    			name: eLis[i].innerHTML, 
+    			url: './page/group.html'
+    		} );
+      }
+      
+    		api.openFrameGroup ({
+    			name: 'gro',
+    			background:'#fff',
+    			rect:{
+    				x: 0,
+    				y: document.querySelector('#wrapper').offsetHeight,
+    				w: api.winWidth,
+    				h: api.winHeight - document.querySelector('#wrapper').offsetHeight
+    			},
+    			frames : frames
+    		}, function(ret, err){
+          if( ret ){
+            funActive( ret.index )
+          }
+    		});
+    }
+
+    function funActive( ele ){
+      var eLis = document.querySelectorAll('li');
+      if( typeof ele == 'object' ){
+        for( var i = 0, len = eLis.length; i < len; i++ ){
+          if( eLis[i] == ele ){
+            ele = i;
+          }
+        }
+        api.setFrameGroupIndex({
+            name: 'gro',
+            index:ele,
+            scroll:true
+        });
+      }
+      var eRun = document.querySelector('.run-line');
+      eRun.style.cssText = 'left:'+eLis[ele].offsetLeft+'px; width:'+eLis[ele].offsetWidth+'px;'
+      myScroll.scrollToElement( eLis[ele], 300, true )
+    };
+</script>

@@ -1,0 +1,61 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td,nav,header { margin:0; padding:0; font-weight:normal; }
+nav{ display:block; }
+nav:after{ content:''; display:block; clear:both; }
+h1,h2,h3,h4,h5,h6{ font-size: 100%; }
+html,body {  font-size:14px; height:100%;  }
+td,th,caption { }	
+img { border:none; }
+ol,ul,li { list-style:none; }
+table { border-collapse:collapse; }
+samll{ font-size:30%; }
+.none{ display: none !important; }
+.opacity{ opacity: 1 !important; }
+
+/* 超出省略… */
+.txt-nowrap{ overflow: hidden; white-space: nowrap; text-overflow: ellipsis;   }
+
+/* 超出隐藏… */
+.box-nowrap{ white-space: nowrap; }
+
+
+.flex-wrap{ display: -webkit-box;	display: -webkit-flex;	display: flex; }
+.flex-con{     -webkit-box-flex: 1;     -webkit-flex: 1;    flex: 1;}
+
+.arrows{ position:relative; }
+.arrows:before,
+.arrows:after{ content:''; display:inline-block; width:30%; height:2px; background-color:white; position:absolute; left:50%; top:50%; margin-left:-20%;  -webkit-transform: rotate(45deg);  }
+.arrows:after{  -webkit-transform: rotate(-45deg);  margin-left:0;  }
+
+.border-t,
+.border-b{ position:relative;  }
+.border-t:before,
+.border-b:after{     content: '';     position: absolute;     left: 0;  top:0;     background: #ddd;   right:0;    height: 1px;     -webkit-transform: scaleY(0.5);             transform: scaleY(0.5);     -webkit-transform-origin: 0 0;             transform-origin: 0 0; }
+.border-b:after{ top:auto; bottom:0;  }
+body.black .border-t:before,
+body.black .border-b:after{ background-color: #363636; }
+
+
+
+		
+.switch{width: 46px;height: 26px;position: relative; box-sizing : border-box; 	border: 1px solid #ccc; background-color: #ddd; box-shadow: #ff6262 0 0 0 0 inset; border-radius: 13px; background-clip: content-box; display: inline-block; -webkit-appearance: none; user-select: none; outline: none; transition:all .4s; }
+.switch:before {width: 24px; height: 24px; position: absolute; top: 0px; transition:all 1s; left: 0px; border-radius: 13px; background-color: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); content: ''; transition: left 0.3s; }
+.switch:checked {border-color: #67778b;box-shadow: #67778b 0 0 0 26px inset;background-color: #67778b;transition: border ease 0.4s,box-shadow ease 0.4s,background-color ease 1.2s; }
+.switch:checked:before {left: 20px; background-color: #252525;  }
+		
+		
+/*	底部浮动	添加频道	*/
+.add-channel{ background-color: rgba(0,0,0,.8); line-height: 42px; color: #e5e5e5; padding: 0 15px; position: fixed; left: 0; bottom: 0; right: 0; z-index: 2; }
+.add-channel span{ background-color: #d43d3d; color: #efc6c6; line-height: 30px; display: block; padding: 0 6px; float: right; margin-top: 6px; border-radius: 6px; }
+
+
+/*	头部浮动	引擎更新提示	*/
+.add-update{ background-color: rgba(23, 116, 182,.8); text-align: center; border-radius: 4px; line-height: 26px; color: white; padding: 0 15px; position: fixed; left: 10px; top: 10px; right: 10px; z-index: 2; }
+body.black .add-update{ background-color: rgba(50, 88, 112,.8); color: #b1b1b1; }
+
+
+/*	提示弹窗	*/
+.pra-open{ position: fixed; left:50%; top:50%; z-index: 100; background-color: rgba(0,0,0,.6); color: white; padding: 20px; border-radius: 6px; }
+
+
+/*	透明遮罩曾	*/
+.showdown{ position: fixed; left:0; top: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,.6); }
