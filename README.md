@@ -1,6 +1,6 @@
 # apicloud-js-module
 
-基于[APICloud平台](http://www.apicloud.com/)开发的一些常用JS组件（包含移动端适用的开源JS组件），每个文件夹包含一个单独示例，可以在[AppLoader](http://docs.apicloud.com/APICloud/download)中单独运行。
+基于[APICloud平台](http://www.apicloud.com/)开发的一些常用JS组件（包含移动端适用的开源JS组件），每个文件中夹包含一个单独示例，可以在[AppLoader](http://docs.apicloud.com/APICloud/download)中单独运行。
 
 <table>
 <tr>
